@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webpage Layout</title>
+    <style>
+        /* General styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: black; /* Text color for all elements */
+        }
+
+        
+/* Banner styles */
+.banner
+{
+    background-color:#f22e6d; /* Red background */
+    color: white; /* Text color */
+    width: 100%; /* Full-width */
+    height: 30mm; /* Set height */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Align text and email */
+    padding: 10px; /* Space inside banner */
+    box-sizing: border-box;
+    font-size: 20px;
+    font-weight: bold;
+     
+}
+
+/* Ensure spacing between banner and header */
+header {
+    margin-top: 10px;
+}
+/* Style secondbannerheading on the next line  */
+.secondbannerheading {
+    font-size: 10px; /* Slightly smaller font for email */
+    margin-right: 15px; /* Adjust spacing on the right */
+    
+    
+}
+
+/* Style contact email separately */
+.contact {
+    font-size: 10px; /* Slightly smaller font for email */
+    margin-right: 15px; /* Adjust spacing on the right */
+    
+    
+}
+
+ 
+
+        /* Header styles */
+        header {
+            background-color: transparent; /* Yellow header */
+            text-align: center;
+            padding: 5px;
+        }            
+           
+        header img {
+            width:100%;
+            height:auto;
+            margin-top: 5px; /* Adjust spacing above */
+            max-height: 300px; /* Limits the height to prevent it from being too big */
+    object-fit: contain; /* Ensures the image fits within the given space */
+        }
+.image-container {
+    position: relative; /* Ensures absolute positioning works inside */
+    display: inline-block;
+    width: 100%; /* Keeps the image-container width consistent */
+}
+ 
+        .overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: lightgreen;
+    font-size: 24px;
+    font-weight: bold;
+    background:  none; /* Removes the strip */
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center; /* Ensures proper centering */
+    width: 100%; /* Matches the width of the image */
+}
+
+        /* Navigation styles */
+        nav {
+            background-color: lightblue; /* Light blue navigation */
+            float: left; /* Align nav to the left */
+            width: 25%; /* Occupies 1/4 of the page width */
+            height: calc(1150vh - 60px); /*extended from 100vh to 500vh 
+            so it can cover more of the scrollable page ,  minus header */
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Section styles */
+        section {
+            background-color: lightgreen; /* Light green section */
+            float: left; /* Allow it to sit beside the nav */
+            width: 75%; /* Occupies 3/4 of the page width */
+            height: calc(1150vh - 60px); /* extended from 100vh to 500vh 
+            so it can cover more of the scrollable page ,  minus header */
+            box-sizing: border-box;
+            padding: 20px;
+        }
+
+        /* Article box styles */
+        article {
+            background-color:transparent; /* Light red article boxes */
+            margin-bottom: 20px;
+            padding: 20px;
+            box-sizing: border-box;
+            border-radius: 5px;
+        }
+ /* Button box styles */
+      
+        button {
+            background-color:red; /* Light red article boxes */
+            margin-bottom: 20px;
+            padding: 10px;
+            box-sizing: border-box;
+            color:white;
+            border-radius: 5px;
+}
+button:hover {
+  background-color:yellow; /* Orange on hover */
+}
+        
+
+        /* Footer styles */
+        footer {
+            background-color:green; /* Matches header */
+            clear: both; /* Ensures footer starts on a new line */
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+     <!-- Banner -->
+    <div class="banner">
+        <span class="banner-text">Herbs and spice at a little corner in Yishun<br>
+        <!-- Style secondbannerheading on the next line -->
+        <span class="secondbannerheading">Information on herbs, vegetables  and flora grown at GUI Kampung Kampus, 91 Lor Chencharu, Singapore </span><br>
+        <span class="contact">Contact: 20point86@gmail.com</span>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="image-container">
+        <img src="pond.png" alt="Achiote aka Lipstick Tree">
+        <h1 class="overlay-text">Welcome to the herb garden<br> Please enter</h1>
+    </div>
+    </header>
+<script>
+    
+    const images = [
+        "docs/digger entrance.png",
+        "docs/farmentrance.png",
+        "docs/camping.png",
+        "meeting.png",
+        "mongolian.png",
+        "path.png",
+        "pond.png",
+        "stream.png",
+        "twilight.png",
+        "unpacking.png",
+        "volunteer entrance.png",
+            
+    ]; // Replace with actual image paths
+
+    let index = 0;
+    function changeImage() {
+        document.querySelector("header img").src = images[index];
+        index = (index + 1) % images.length; // Cycle through images
+    }
+
+    setInterval(changeImage, 3000); // Change every 3 seconds
+    changeImage(); // Initial load
+    
+</script>
+    <!-- Navigation -->
+    <nav>
+
+        <div class="image-container">
+        <img src="docs/Jewel of opar.jpg " alt="Achiote aka Lipstick Tree">  <!-- this code will allow for a display of the image of the Jewel of opar at
+            the nav column -->
+        
+    </div>
+         <p style="color: yellow;font-size: 25px; font-weight: bold;">Herbs, spices and flora</p> <!-- Previously it was: <p> Herbs, spices and flora: </p> -->
+
+        <p><a href="docs/aloe.png" target="_blank">Aloe Vera 芦荟</a></p>
+         <p><a href="docs/amazon.png" target="_blank">Amazon Blue 蓝金花</a></p>
+         <p><a href="docs/areca.png" target="_blank">Areca 散尾葵</a></p>
+         <p><a href="camping.png" target="_blank">Asian Pigeon Wings 蝶豆花</a></p>
+        <p><a href=" docs/asian.jpg" target="_blank">Asian Broom Grass 蝶豆花</a></p>
+         <p><a href="camping.png" target="_blank">Balloon Vine 倒地铃</a></p>
+         <p><a href="camping.png" target="_blank">Balsam 凤仙花</a></p>
+         <p><a href="camping.png" target="_blank">Banana 香蕉</a></p>
+         <p><a href="camping.png" target="_blank">Barbados Lily 鹤顶红</a></p>
+         <p><a href="camping.png" target="_blank">Basil九层塔</a></p>
+         <p><a href="docs/aloe.png" target="_blank">Beggarticks 白花鬼针草</a></p>
+         <p><a href="docs/amazon.png" target="_blank">Begonia 秋海棠</a></p>
+         <p><a href="docs/areca.png" target="_blank">Betel Leaf 槟榔叶</a></p>
+         <p><a href="camping.png" target="_blank">Bitter Gourd 苦瓜</a></p>
+         <p><a href="camping.png" target="_blank">Bitter Leaf 南非叶</a></p>
+         <p><a href="camping.png" target="_blank">Black Aralia 银边南洋参</a></p>
+         <p><a href="camping.png" target="_blank">Black Face General 黑面将军</a></p>
+         <p><a href="camping.png" target="_blank">Blue Porterweed假马鞭</a></p>
+         <p><a href="camping.png" target="_blank">Bougainvillea 九重葛</a></p>
+         <p<a href="docs/aloe.png" target="_blank">Buddha’s Belly 佛肚树</a></p>
+         <p><a href="docs/amazon.png" target="_blank">Candle Bush 翅果铁刀木</a></p>
+         <p><a href="docs/areca.png" target="_blank">Cardboard Palm 美叶苏铁</a></p>
+         <p><a href="camping.png" target="_blank">Cashew 腰果</a></p>
+         <p><a href="camping.png" target="_blank">Cassava 木薯</a></p>
+         <p><a href="camping.png" target="_blank">Cat’s Whiskers Flower 猫薄荷</a></p>
+         <p><a href="camping.png" target="_blank">Chiku/Sapodilla 人心果</a></p>
+         <p><a href="camping.png" target="_blank">Chinese Banyan 细叶榕</a></p>
+         <p><a href="camping.png" target="_blank">Chinese Evergreen 粗肋草</a></p>
+         <p><a href="docs/aloe.png" target="_blank">Chinese Violet 宽叶十万错</a></p>
+         <p><a href="docs/amazon.png" target="_blank">Christ Plant 虎刺梅</a></p>
+         <p><a href="docs/areca.png" target="_blank">Citronella 亚香茅</a></p>
+         <p><a href="camping.png" target="_blank">Cockscomb 鸡冠花</a></p>
+         <p><a href="camping.png" target="_blank">Coffee Liberica 大果咖啡</a></p>
+         <p><a href="camping.png" target="_blank">Coleus 五彩苏</a></p>
+         <p><a href="camping.png" target="_blank">Coral Vine,  珊瑚藤</a></p>
+         <p><a href="camping.png" target="_blank">Cosmos Caudatus 帝皇乌蓝</a></p>
+         <p><a href="camping.png" target="_blank">Culantro 刺芹</a></p>
+          <p><a href="docs/aloe.png" target="_blank"> Curry Leaves 咖喱叶</a></p>
+         <p><a href="docs/amazon.png" target="_blank">Cutleaf Groundcherry 苦蘵</a></p>
+         <p><a href="docs/areca.png" target="_blank">Dayak Onion 红葱</a></p>
+         <p><a href="camping.png" target="_blank">Dinner Plate Aralia 圆叶南洋参</a></p>
+        <p><a href=" docs/asian.jpg" target="_blank">Dog Fennel 假蒿</a></p>
+         <p><a href="camping.png" target="_blank">Dracaena 龙血树</a></p>
+         <p><a href="camping.png" target="_blank">Dumb Cane 花叶万年青</a></p>
+         <p><a href="camping.png" target="_blank">Egg Fruit/Canistel 蛋黄果</a></p>
+         <p><a href="camping.png" target="_blank">Elephant Ear Yam/Taro‘象耳’芋头/芋头</a></p>
+         <p><a href="camping.png" target="_blank">Firecracker Plant 爆仗竹</a></p>
+         <p><a href="docs/aloe.png" target="_blank">Fishtail Palm 鱼尾葵</a></p>
+         <p><a href="docs/amazon.png" target="_blank">Flame Torch Flower 水塔花</a></p>
+         <p><a href="docs/areca.png" target="_blank">Frangipani 鸡蛋花</a></p>
+         <p><a href="camping.png" target="_blank">Butterfly Ginger Flower 姜/姜花</a></p>
+         <p><a href="camping.png" target="_blank">Green Chireta 穿心莲</a></p>
+         <p><a href="camping.png" target="_blank">Guava 番石榴</a></p>
+         <p><a href="camping.png" target="_blank">Heliconia 赫蕉</a></p>
+         <p><a href="camping.png" target="_blank">Hibiscus 大红花</a></p>
+         <p><a href="camping.png" target="_blank">Impala Lily/Desert Rose 沙漠玫瑰</a></p>
+         <p<a href="docs/aloe.png" target="_blank">Indian Borage 到手香</a></p>
+         <p><a href="docs/aloe.png" target="_blank">Jamaica Cherry 文定果</a></p>
+         <p><a href="docs/amazon.png" target="_blank">Jambu/Wax Apple 莲雾</a></p>
+         <p><a href="docs/areca.png" target="_blank">Jewel of Opar 土人参</a></p>
+         <p><a href="camping.png" target="_blank">Justicia Gendarussa Variegate 小驳骨</a></p>
+        <p><a href=" docs/asian.jpg" target="_blank">Kaffir Lime 卡菲尔酸橙</a></p>
+         <p><a href="camping.png" target="_blank">Kang Kong 蕹菜</a></p>
+         <p><a href="camping.png" target="_blank">thai Land Cress 土芹</a></p>
+         <p><a href="camping.png" target="_blank">Bandicoot berry /Leea Indica 火筒树</a></p>
+         <p><a href="camping.png" target="_blank">Lime 酸柑</a></p>
+         <p><a href="camping.png" target="_blank">Longan 龙眼</a></p>
+         <p><a href="docs/aloe.png" target="_blank">Malabar Chestnut 马拉巴栗</a></p>
+         <p><a href="docs/amazon.png" target="_blank">Malabar Melastoma 野牡丹</a></p>
+         <p><a href="docs/areca.png" target="_blank">Malabar Spinach 帝皇苗</a></p>
+         <p><a href="camping.png" target="_blank">Mani Cai/Star Gooseberry 马尼菜</a></p>
+         <p><a href="camping.png" target="_blank">Marigold 万寿菊</a></p>
+         <p><a href="camping.png" target="_blank">Mexican Petunia 紫花芦莉草</a></p>
+         <p><a href="camping.png" target="_blank">Mexican Sunflower 墨西哥向日葵</a></p>
+         <p><a href="camping.png" target="_blank">Ming Aralia 裂叶福禄桐</a></p>
+         <p><a href="camping.png" target="_blank">Mint 薄荷叶</a></p>
+         <p<a href="docs/aloe.png" target="_blank">Moss Rose 大花马齿苋</a></p>
+         <p><a href="docs/aloe.png" target="_blank">Mother-in-Law Tongue 虎尾兰</a></p>
+         <p><a href="docs/amazon.png" target="_blank">Mugwort 艾草</a></p>
+         <p><a href="docs/areca.png" target="_blank">Mulberry 桑树</a></p>
+         <p><a href="camping.png" target="_blank">Noni Fruit Tree 檄树</a></p>
+        <p><a href=" docs/asian.jpg" target="_blank">Oil Palm 油棕</a></p>
+         <p><a href="camping.png" target="_blank">Pandan 班兰叶</a></p>
+         <p><a href="camping.png" target="_blank">Papaya 木瓜</a></p>
+         <p><a href="camping.png" target="_blank">Passion Fruit 百香果</a></p>
+         <p><a href="camping.png" target="_blank">Philodendron 蔓绿绒</a></p>
+         <p><a href="camping.png" target="_blank">Pigeon Berry 数珠珊瑚</a></p>
+         <p><a href="docs/aloe.png" target="_blank">Pine 松</a></p>
+         <p><a href="docs/amazon.png" target="_blank">Pomegranate 石榴</a></p>
+         <p><a href="docs/areca.png" target="_blank">Pomelo 柚子</a></p>
+         <p><a href="camping.png" target="_blank">Prickly Pear Cactus 仙人掌</a></p>
+         <p><a href="camping.png" target="_blank">Purslane 马齿苋</a></p>
+         <p><a href="camping.png" target="_blank">Quail Grass 青葙</a></p>
+         <p><a href="camping.png" target="_blank">Rain Lily 玉帘</a></p>
+         <p><a href="camping.png" target="_blank">Red Hot Cat’s Tail 红橞铁苋菜</a></p>
+         <p><a href="camping.png" target="_blank">Redbird Flower 红雀珊瑚</a></p>
+         <p<a href="docs/aloe.png" target="_blank">Rose Cactus 七星针</a></p>
+         <p><a href="docs/aloe.png" target="_blank">Sabah Snake Grass 忧遁草</a></p>
+         <p><a href="docs/amazon.png" target="_blank">Sansevieria Canaliculata 棒叶老虎尾</a></p>
+         <p><a href="docs/areca.png" target="_blank">Santol 山陀儿</a></p>
+         <p><a href="camping.png" target="_blank">Selaginella Tamariscina 卷柏</a></p>
+        <p><a href=" docs/asian.jpg" target="_blank">Shoebutton Ardisia 兰屿树杞</a></p>
+         <p><a href="camping.png" target="_blank">Song of India 百合竹</a></p>
+         <p><a href="camping.png" target="_blank">Soursop 红毛榴莲</a></p>
+         <p><a href="camping.png" target="_blank">Spider Lily 蜘蛛百合</a></p>
+         <p><a href="camping.png" target="_blank">Stinkvine 鸡屎藤</a></p>
+         <p><a href="camping.png" target="_blank">Sugarcane 甘蔗</a></p>
+         <p><a href="docs/aloe.png" target="_blank">Sunn Hemp 菽麻</a></p>
+         <p><a href="docs/amazon.png" target="_blank">Sweet Potato 番薯</a></p>
+         <p><a href="docs/areca.png" target="_blank">Taro 芋</a></p>
+         <p><a href="camping.png" target="_blank">Tarragon龙蒿</a></p>
+         <p><a href="camping.png" target="_blank">Torch Ginger 火炬姜</a></p>
+         <p><a href="camping.png" target="_blank">Tricolour Dwarf Oyster Plant 三色龙血树</a></p>
+         <p><a href="camping.png" target="_blank">Turkey Berry 水茄</a></p>
+         <p><a href="camping.png" target="_blank">Turmeric Plant 姜黄</a></p>
+         <p><a href="camping.png" target="_blank">Twelve Stamen Melastoma 野牡丹</a></p>
+         <p<a href="docs/aloe.png" target="_blank">Veld Grape Plant 翡翠阁</a></p>
+         <p><a href="docs/aloe.png" target="_blank">Wandering Jews 水龟草</a></p>
+         <p><a href="docs/amazon.png" target="_blank">Water Lily 睡莲</a></p>
+         <p><a href="docs/areca.png" target="_blank">Wishbone Flower兰猪耳</a></p>
+         <p><a href="camping.png" target="_blank"Yellow Bells黄钟花</a></p>
+        <p><a href=" docs/asian.jpg" target="_blank">Zanzibar Gem 金钱树</a></p>
+          
+        </nav>
+
+    <!-- Main Section -->
+    <section>
+       <!-- <article>
+          <h2>Article 1</h2>
+          <p>This is the first article.</p>
+        </article>
+        -->
+     <article>
+     <div class="image-container">
+     <img src="docs/healthcare.png " alt="Achiote aka Lipstick Tree">        
+    <h2><a href="docs/work in progress.png" target="_blank">Article 1</a></h2>
+    <p>This is the first article.</p>
+</article>
+
+        <!--
+        <article>
+            <h2><div class="image-container">
+        <img src="Jewel of opar.jpg" alt="Achiote aka Lipstick Tree">
+        <h1 class="overlay-text">Welcome to the herb garden<br> Please enter</h1>
+    </div</h2>
+            <p>This is the second article.</p>
+        </article>
+        -->
+        
+      <button>
+            <h2>Button</h2>
+  <a href="https://www.jalanow.com/johor-singapore-live-traffic-cam.htm "       class=" button">Click Here</a>
+      </button>
+    </section>
+
+    <!-- Footer -->
+    <!--<footer>
+        <p>Footer Content</p>
+    </footer> -->
+</body>
+</html>
